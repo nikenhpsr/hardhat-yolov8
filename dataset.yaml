@@ -1,0 +1,15 @@
+path: "D:/2023/Coding/project/yolo/yolo/dataset"
+train: images/Training # train images (relative to 'path')
+val: images/Testing # val images (relative to 'path')
+
+# Number of classes
+nc: 6 # Example for three classes
+
+# Class names
+names:
+  0: blue
+  1: white
+  2: red
+  3: yellow
+  4: orange
+  5: green
