@@ -6,7 +6,7 @@ model = YOLO('yolov8n.pt')  # load an official model
 model = YOLO('D:/2023/Coding/project/yolo/yolo/dataset/runs/detect/train/weights/best.pt')  # load a custom model
 
 # Predict with the model
-results = model('D:/2023/Coding/project/yolo/yolo/dataset/D09_20230825094234.mp4g')  # predict on an image
+results = model('D:/2023/Coding/project/yolo/yolo/dataset/D09_20230825094234.mp4')  # predict on an image
 
 for result in results:
     boxes = result.boxes  # Boxes object for bounding box outputs
