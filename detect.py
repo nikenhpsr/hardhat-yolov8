@@ -17,6 +17,9 @@ client = Client(account_sid, auth_token)
 
 cap = cv2.VideoCapture(source)
 
+# Counter for blue hat detection
+blue_hat_counter = 0
+
 # Loop through the video frames
 while cap.isOpened():
     # Read a frame from the video
@@ -28,11 +31,13 @@ while cap.isOpened():
         
         for result in results:
             if 'blue hat' in result.names:
-                message = client.messages.create(
-                    from_= 'whatsapp:+14155238886',
-                    body = 'Topi biru terdeteksi',
-                    to='whatsapp:+62859106653390'
-                )
+                blue_hat_counter += 1
+                if blue_hat_counter % 10 == 0:  # Change this number to adjust the frequency of messages
+                    message = client.messages.create(
+                        from_= 'whatsapp:+14155238886',
+                        body = 'Topi biru terdeteksi',
+                        to='whatsapp:+62xxxxxx'
+                    )
 
         # Visualize the results on the frame
         annotated_frame = results[0].plot()
